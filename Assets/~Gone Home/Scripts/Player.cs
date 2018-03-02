@@ -8,7 +8,8 @@ namespace GoneHome
     public class Player : MonoBehaviour
     {
 
-        public float movementSpeed = 10f;
+        public float acceleration = 20f;
+        public float maxVelocity = 20f;
 
         private Rigidbody rigid;
 
@@ -29,17 +30,22 @@ namespace GoneHome
             // Convert input to Vector3 direction
             Vector3 inputDir = new Vector3(inputH, 0, inputV);
 
-            // Use direction to apply force... also with speed
-            rigid.AddForce(inputDir * movementSpeed);
+            //makes movement directions be in line with camera, not the player object (w is forward for the camera not forward for the object)
+            Transform cam = Camera.main.transform;
+            inputDir = Quaternion.AngleAxis(cam.eulerAngles.y, Vector3.up) * inputDir;
 
-            // Copy position
-            Vector3 position = transform.position;
+            // Add force to Player
+            rigid.AddForce(inputDir * acceleration);
 
-            // Modify position
-            position += inputDir * movementSpeed * Time.deltaTime;
-
-            // Apply position to rigidbody (to test for collisions)
-            rigid.MovePosition(position);
+            Vector3 vel = rigid.velocity;
+            // Check if velocity is too high
+            if (vel.magnitude > maxVelocity)
+            {
+                // Cap the velocity
+                vel = vel.normalized * maxVelocity;
+            }
+            // Apply the velocity
+            rigid.velocity = vel;
         }
     }
 }
