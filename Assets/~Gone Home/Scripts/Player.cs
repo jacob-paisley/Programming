@@ -10,14 +10,18 @@ namespace GoneHome
 
         public float acceleration = 20f;
         public float maxVelocity = 20f;
+        public GameObject deathParticles;
 
         private Rigidbody rigid;
+        private Vector3 spawnPoint;
 
 
         // Use this for initialization
         void Start()
         {
             rigid = GetComponent<Rigidbody>();
+
+            spawnPoint = transform.position;
         }
 
         // Update is called once per frame
@@ -47,5 +51,20 @@ namespace GoneHome
             // Apply the velocity
             rigid.velocity = vel;
         }
+
+
+        // Resets the player's settings when run
+        public void Reset()
+        {
+            // Play Explosion Particles
+            GameObject clone = Instantiate(deathParticles);
+            clone.transform.position = transform.position;
+            // Reset player's position to start position
+            transform.position = spawnPoint;
+            // Reset player's velocity
+            rigid.velocity = Vector3.zero;
+        }
+
+
     }
 }
