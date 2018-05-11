@@ -2,68 +2,57 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Clean Code: CTRL + K + D (in that order)
 
-// Clean code: CTRL + K + D (in that order)
-// Fold code: CTRL + M + O
-// Un-Fold code: CTRL + M + P
-
-// Level 1 - Classes
-// Level 2 - Functions and Variables
-// Level 3 - Statements
-
-
+// {} - Braces
+// [] - Brackets
+// () - Parenthesis
 namespace Asteroids
 {
-
     public class Moving : MonoBehaviour
     {
-        public float rotationSpeed = 360f;
-        public float movementSpeed = 10f;
+        // Member Variables
+        public float rotationSpeed;
+        public float movementSpeed;
 
-        // Use this for initialization
-        void Start()
+        void Movement()
         {
-            // Instructions (Statements) go here
+            // Move up
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                // Move the player up by movementSpeed
+                //Vector3 position = transform.position;
+                //position.y += movementSpeed * Time.deltaTime;
+                //transform.position = position;
+                transform.Translate(Vector3.up * movementSpeed * Time.deltaTime);
+            }
+
+            // Move down
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                transform.Translate(Vector3.down * movementSpeed * Time.deltaTime);
+            }
         }
 
         void Rotation()
         {
-            // Check if left is pressed
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                // Rotate left
-                transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
-            }
+            // Rotate Right
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 transform.Rotate(Vector3.back, rotationSpeed * Time.deltaTime);
             }
         }
 
-        void Movement()
-        {
-            // Check if up key is pressed
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                //Vector3 position = transform.position;
-                //position.y += movementSpeed * Time.deltaTime;
-                //transform.position = position;
-                transform.Translate(Vector3.up * movementSpeed * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                transform.Translate(Vector3.down * movementSpeed * Time.deltaTime);
-            }
+        // TASK: Make a 'Rotation()' function and put rotation code in it
 
-        }
         // Update is called once per frame
         void Update()
         {
             // Call 'Movement()' function
             Movement();
+
             // Call 'Rotation()' function
             Rotation();
         }
-
     }
 }
