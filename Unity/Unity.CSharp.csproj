@@ -138,6 +138,10 @@
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileObject.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TmxObject.cs" />
+    <Compile Include="Assets\~AHundredBalls\Scripts\Ball.cs" />
+    <Compile Include="Assets\~AHundredBalls\Scripts\Bucket.cs" />
+    <Compile Include="Assets\~AHundredBalls\Scripts\Paddle.cs" />
+    <Compile Include="Assets\~AHundredBalls\Scripts\Spawner.cs" />
     <Compile Include="Assets\~Asteroids\Scripts\Moving.cs" />
     <Compile Include="Assets\~Breakout\Scripts\Ball.cs" />
     <Compile Include="Assets\~Breakout\Scripts\Helpers\KeepWithinScreen.cs" />
