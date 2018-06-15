@@ -75,6 +75,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -153,6 +154,9 @@
     <Compile Include="Assets\~Gone Home\Scripts\GameManager.cs" />
     <Compile Include="Assets\~Gone Home\Scripts\Goal.cs" />
     <Compile Include="Assets\~Gone Home\Scripts\Player.cs" />
+    <Compile Include="Assets\~RollABall\Scripts\CameraController.cs" />
+    <Compile Include="Assets\~RollABall\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\~RollABall\Scripts\Rotator.cs" />
     <Compile Include="Assets\~SunnyLand\Scripts\PlayerController.cs" />
     <Compile Include="Assets\~SunnyLand\Scripts\UserInput.cs" />
   </ItemGroup>
