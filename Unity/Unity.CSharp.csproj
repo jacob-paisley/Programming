@@ -143,6 +143,16 @@
     <Compile Include="Assets\~AHundredBalls\Scripts\Bucket.cs" />
     <Compile Include="Assets\~AHundredBalls\Scripts\Paddle.cs" />
     <Compile Include="Assets\~AHundredBalls\Scripts\Spawner.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\CameraController.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\Death.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\DestroyOnLifeTime.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\Enemies\FollowEnemy.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\Enemies\PatrolEnemy.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\GameManager.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\Goal.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\Player.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\~Assessment1\Scripts\Rotator.cs" />
     <Compile Include="Assets\~Asteroids\Scripts\Moving.cs" />
     <Compile Include="Assets\~Breakout\Scripts\Ball.cs" />
     <Compile Include="Assets\~Breakout\Scripts\Helpers\KeepWithinScreen.cs" />
